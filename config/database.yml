@@ -25,7 +25,7 @@ default: &default
 
 development:
   <<: *default
-  database: final_capstone_backend_development
+  database: capstone-module-back-end_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: final_capstone_backend_test
+  database: capstone-module-back-end_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: final_capstone_backend_production
+  database: capstone-module-back-end_production
   username: final_capstone_backend
   password: <%= ENV["DATABASE_PASSWORD"] %>
