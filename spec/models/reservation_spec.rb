@@ -3,16 +3,16 @@ require 'rails_helper'
 RSpec.describe Reservation, type: :model do
   describe 'validations' do
     it 'should be valid with valid credentials' do
-      user = User.create!(name: 'Binyam') # Using create! to persist and raise errors if any
-      doctor = Doctor.create!(name: 'Doc 1', doctor_type: 'Doc type', image_url: 'ios.jpg', address: 'first street 123') # Same here
-      reservation = Reservation.new(date_of_reservation: '1/2/2024', user: user, doctor: doctor)
-    
+      user = User.create!(name: 'Binyam')
+      doctor = Doctor.create!(name: 'Doc 1', doctor_type: 'Doc type', image_url: 'ios.jpg', address: 'first street 123')
+      reservation = Reservation.new(date_of_reservation: '1/2/2024', user:, doctor:)
+
       expect(reservation).to be_valid
     end
 
     it 'is not valid without an Reservation time' do
-      Reservation = Reservation.new(date_of_reservation: nil)
-      expect(Reservation).to_not be_valid
+      reservation = Reservation.new(date_of_reservation: nil)
+      expect(reservation).to_not be_valid
     end
   end
 

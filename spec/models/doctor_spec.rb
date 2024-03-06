@@ -4,7 +4,8 @@ RSpec.describe Doctor, type: :model do
   # test doctor validations
   describe 'validations' do
     it 'should be valid with valid credentials' do
-      doctor = Doctor.new(name: 'Dr. Smith', image_url: 'some_image.jpg', doctor_type: 'Cardiology', address: '123 Main St')
+      doctor = Doctor.new(name: 'Dr. Smith', image_url: 'some_image.jpg', doctor_type: 'Cardiology',
+                          address: '123 Main St')
       expect(doctor).to be_valid
     end
 
@@ -32,9 +33,12 @@ RSpec.describe Doctor, type: :model do
   # test doctor associations
   describe 'associations' do
     it 'should destroy associated appointments' do
-      doctor1 = Doctor.new(name: 'Dr. Smith', image_url: 'some_image.jpg', doctor_type: 'Cardiology', address: '123 Main St')
-      doctor2 = Doctor.new(name: 'Dr. Smith2', image_url: 'some_image.jpg', doctor_type: 'Cardiology', address: '123 Main St')
-      doctor3 = Doctor.new(name: 'Dr. Smith3', image_url: 'some_image.jpg', doctor_type: 'Cardiology', address: '123 Main St')
+      doctor1 = Doctor.new(name: 'Dr. Smith', image_url: 'some_image.jpg', doctor_type: 'Cardiology',
+                           address: '123 Main St')
+      doctor2 = Doctor.new(name: 'Dr. Smith2', image_url: 'some_image.jpg', doctor_type: 'Cardiology',
+                           address: '123 Main St')
+      doctor3 = Doctor.new(name: 'Dr. Smith3', image_url: 'some_image.jpg', doctor_type: 'Cardiology',
+                           address: '123 Main St')
 
       expect(doctor1).to be_valid
       expect(doctor2).to be_valid
@@ -42,7 +46,8 @@ RSpec.describe Doctor, type: :model do
     end
 
     it 'should have many users through appointments' do
-      doctor = Doctor.new(name: 'Dr. Smith', image_url: 'some_image.jpg', doctor_type: 'Cardiology', address: '123 Main St')
+      doctor = Doctor.new(name: 'Dr. Smith', image_url: 'some_image.jpg', doctor_type: 'Cardiology',
+                          address: '123 Main St')
       expect(doctor).to be_valid
     end
   end
