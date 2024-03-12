@@ -1,7 +1,12 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
-    render json: @reservations
+    @reservations = Reservation.includes(:doctor).all
+    render json: @reservations.to_json(include: :doctor)
+  end
+
+  def show
+    @reservation = Reservation.includes(:doctor).find(params[:id])
+    render json: @reservation.to_json(include: :doctor)
   end
 
   def create
@@ -12,11 +17,6 @@ class Api::V1::ReservationsController < ApplicationController
     else
       render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @reservation = Reservation.find(params[:id])
-    render json: @reservation
   end
 
   def destroy
