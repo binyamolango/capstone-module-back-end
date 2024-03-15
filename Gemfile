@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'rswag-specs'
 end
 
 group :development do
@@ -54,3 +55,7 @@ end
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'rack-cors', require: 'rack/cors'
+
+gem 'rswag-api'
+
+gem 'rswag-ui'
