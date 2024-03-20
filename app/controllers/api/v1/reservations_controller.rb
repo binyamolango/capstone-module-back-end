@@ -1,4 +1,6 @@
 class Api::V1::ReservationsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @reservations = Reservation.includes(:doctor).all
     render json: @reservations.to_json(include: :doctor)
