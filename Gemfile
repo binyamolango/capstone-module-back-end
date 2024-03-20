@@ -59,3 +59,5 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'rswag-api'
 
 gem 'rswag-ui'
+
+gem 'devise'
