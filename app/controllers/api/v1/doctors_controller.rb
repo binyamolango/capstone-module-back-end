@@ -1,4 +1,5 @@
 class Api::V1::DoctorsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
   before_action :set_doctor, only: %i[show destroy]
 
   def index
